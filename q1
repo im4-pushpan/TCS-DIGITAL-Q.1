@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int main()
-{    int n,j=0,f=0,arr[100],s[100],x=-1,temp;
+{    int n,j=0,f=0,arr[100],s[100],x=0,temp;
      cin>>n;
      temp=n-1;
      if(n>=1 && n<=10000)
@@ -31,11 +31,11 @@ int main()
 		   } 
 		   for(int i=0;i<j;i++)
 		   {   if(arr[i]!=0)
-		      	{ s[++x]=arr[i];					
+		      	{ s[x++]=arr[i];					
 		   		}
 	       }
-	      for(int i=0;i<=x;i++)
-	       {	for(int j=0;j<=(x-1)-i;j++)
+	      for(int i=0;i<x;i++)
+	       {	for(int j=0;j<x-1-i;j++)
 	       		{ if(s[j]>s[j+1])
 	       			{ int t;
 					   t=s[j];
@@ -47,7 +47,7 @@ int main()
 				}
 	       	
 		   }
-		  for(int i=0;i<=x;i++)
+		  for(int i=0;i<x;i++)
 		   cout<<s[i];
 	       
 	       
